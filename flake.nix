@@ -1,11 +1,10 @@
 # SPDX-FileCopyrightText: 2025 Samuel Wu
 #
-# SPDX-License-Identifier: 0BSD
+# SPDX-License-Identifier: MIT
 {
   inputs = {
     # Use stable instead of unstable packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    systems.url = "github:nix-systems/default";
 
     # Better management with flake modules
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -16,6 +15,7 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
     # Hardware configuration
+    systems.url = "github:nix-systems/default";
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
 
     # Use lix instead of nix as package manager
@@ -26,41 +26,9 @@
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Nix development tools
-    alejandra.url = "github:kamadorueda/alejandra/4.0.0";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
+    # Modularize mkShell
+    make-shell.url = "github:nicknovitski/make-shell";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
-
-  # Simple Shearable Config
-  # From https://www.reddit.com/r/NixOS/comments/yk4n8d/comment/iurkkxv
-  # outputs = {
-  #   nix-ld,
-  #   nixpkgs,
-  #   lix-module,
-  #   ...
-  # } @ attrs: let
-  #   commonModules = name: [
-  #     nix-ld.nixosModules.nix-ld
-  #     lix-module.nixosModules.default
-  #     ./configuration.nix
-  #     ./hosts/${name}
-  #     {
-  #       networking.hostName = name;
-  #       programs.nix-ld.dev.enable = true;
-  #     }
-  #   ];
-  #   mkSystem = name: cfg:
-  #     nixpkgs.lib.nixosSystem {
-  #       system = cfg.system or "x86_64-linux";
-  #       modules = (commonModules name) ++ (cfg.modules or []);
-  #       specialArgs = attrs;
-  #     };
-  #   systems = {
-  #     amitie = {};
-  #   };
-  # in {
-  #   nixosConfigurations = nixpkgs.lib.mapAttrs mkSystem systems;
-  # };
 }

@@ -1,31 +1,13 @@
 {
   inputs,
   lib,
-  config,
   flake-parts-lib,
+  config,
   ...
 }: let
   inherit (lib) mkOption types;
   inherit (flake-parts-lib) mkSubmoduleOptions;
   hosts = config.flake.hosts or {};
-  # flake.nixosConfigurations = {
-  #   amitie = linux "amitie";
-  # };
-  # linux = mkNixOS "x86_64-linux" "nixos";
-  # mkNixOS = system: cls: name:
-  #   inputs.nixpkgs.lib.nixosSystem {
-  #     inherit system;
-  #     modules = [
-  #       inputs.self.modules.nixos.${cls}
-  #       inputs.self.modules.nixos.${name}
-  #       inputs.self.modules.nixos.${system}
-  #       {
-  #         networking.hostName = lib.mkDefault name;
-  #         nixpkgs.hostPlatform = lib.mkDefault system;
-  #         system.stateVersion = "25.05";
-  #       }
-  #     ];
-  #   };
 in {
   options = {
     flake = mkSubmoduleOptions {
@@ -46,7 +28,9 @@ in {
               (builtins.attrValues host.modules)
               ++ [
                 {
-                  networking.hostName = name;
+                  networking = {
+                    hostName = name;
+                  };
                 }
               ];
           };
