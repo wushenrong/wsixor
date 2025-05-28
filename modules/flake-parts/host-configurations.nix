@@ -46,9 +46,7 @@ in {
               (builtins.attrValues host.modules)
               ++ [
                 {
-                  networking = {
-                    hostName = name;
-                  };
+                  networking.hostName = name;
                 }
               ];
           };
