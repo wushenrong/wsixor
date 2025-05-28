@@ -4,4 +4,3 @@
     loader.efi.canTouchEfiVariables = true;
   };
 }
-w
