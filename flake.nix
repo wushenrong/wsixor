@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: 0BSD
 {
   inputs = {
+    # Use stable instead of unstable packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     systems.url = "github:nix-systems/default";
 
@@ -14,6 +15,9 @@
     disko.url = "github:nix-community/disko/latest";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Hardware configuration
+    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+
     # Use lix instead of nix as package manager
     lix-module.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
     lix-module.inputs.nixpkgs.follows = "nixpkgs";
@@ -21,6 +25,10 @@
     # Patch generic linux executables to run on NixOS
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Nix development tools
+    alejandra.url = "github:kamadorueda/alejandra/4.0.0";
+    alejandra.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
