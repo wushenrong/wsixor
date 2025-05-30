@@ -23,6 +23,7 @@
         # Useful system utilities
         curl
         file
+        libarchive
         pciutils
         sbctl
         usbutils
