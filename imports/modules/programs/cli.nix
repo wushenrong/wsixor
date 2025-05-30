@@ -1,0 +1,64 @@
+{inputs, ...}: {
+  unify.nixos = {
+    imports = [inputs.nix-index-database.nixosModules.nix-index];
+    programs.nix-index-database.comma.enable = true;
+
+    programs = {
+      bat.enable = true;
+      ccache.enable = true;
+      git.enable = true;
+      gnupg = {
+        agent.enable = true;
+        dirmngr.enable = true;
+      };
+      less.enable = true;
+      tmux.enable = true;
+      vim.enable = true;
+      zoxide.enable = true;
+      zsh.enable = true;
+    };
+
+    environment.systemPackages = {pkgs, ...}:
+      with pkgs; [
+        # Useful system utilities
+        curl
+        file
+        pciutils
+        sbctl
+        usbutils
+        wget
+
+        # Nix
+        inputs.nix-alien.packages.${system}.default
+        inputs.nix-inspect.packages.default
+        nix-output-monitor
+        nix-tree
+        nixos-rebuild-ng
+
+        # Utilities for shell setup
+        aspell
+        bfs
+        btop
+        chafa
+        chezmoi
+        delta
+        duf
+        elinks
+        exiftool
+        eza
+        fastfetch
+        fd
+        fzf
+        gdu
+        glow
+        hexyl
+        hyperfine
+        imagemagick
+        jq
+        lesspipe
+        ripgrep
+        tokei
+        vivid
+      ];
+  };
+}

@@ -15,15 +15,16 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
-    unify = {
-      url = "git+https://codeberg.org/quasigod/unify?ref=hosts-redesign";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Make Unify Happy
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    unify = {
+      url = "git+https://codeberg.org/quasigod/unify?ref=hosts-redesign";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     # Automatic disk partitioning
@@ -37,6 +38,12 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
 
+    # Secure boot
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Use lix instead of nix as package manager
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
@@ -48,6 +55,16 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Examine nix stores
+    nix-inspect.url = "github:bluskript/nix-inspect";
+
+    # Make mkShell modular
+    make-shell.url = "github:nicknovitski/make-shell";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./imports);
