@@ -36,7 +36,6 @@
         nixos-rebuild-ng
 
         # Utilities for shell setup
-        aspell
         bfs
         btop
         chafa
@@ -59,6 +58,10 @@
         ripgrep
         tokei
         vivid
+
+        # Spellchecker
+        hunspell
+        hunspell.en_US
       ];
   };
 }
