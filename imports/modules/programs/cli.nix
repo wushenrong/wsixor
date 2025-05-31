@@ -14,6 +14,7 @@
       less.enable = true;
       tmux.enable = true;
       vim.enable = true;
+      yazi.enable = true;
       zoxide.enable = true;
       zsh.enable = true;
     };
@@ -48,6 +49,7 @@
         eza
         fastfetch
         fd
+        ffmpeg
         fzf
         gdu
         glow
@@ -59,6 +61,7 @@
         ripgrep
         tokei
         vivid
+        yt-dlp
 
         # Spellchecker
         hunspell
