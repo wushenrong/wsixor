@@ -31,8 +31,8 @@
         wget
 
         # Nix
-        inputs.nix-alien.packages.${system}.default
-        inputs.nix-inspect.packages.default
+        # inputs.nix-alien.packages.${system}.default
+        # inputs.nix-inspect.packages.default
         nix-output-monitor
         nix-tree
         nixos-rebuild-ng
