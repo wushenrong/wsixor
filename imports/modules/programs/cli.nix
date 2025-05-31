@@ -64,7 +64,7 @@
 
       # Spellchecker
       hunspell
-      hunspell.en_US
+      hunspellDicts.en_US
     ];
   };
 }
