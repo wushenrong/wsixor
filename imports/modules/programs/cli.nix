@@ -45,7 +45,6 @@
         delta
         duf
         elinks
-        exiftool
         eza
         fastfetch
         fd
@@ -58,6 +57,7 @@
         imagemagick
         jq
         lesspipe
+        mediainfo
         ripgrep
         tokei
         vivid
