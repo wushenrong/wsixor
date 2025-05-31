@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  unify.nixos = {
+  unify.nixos = {pkgs, ...}: {
     imports = [inputs.nix-index-database.nixosModules.nix-index];
     programs.nix-index-database.comma.enable = true;
 
@@ -19,53 +19,52 @@
       zsh.enable = true;
     };
 
-    environment.systemPackages = {pkgs, ...}:
-      with pkgs; [
-        # Useful system utilities
-        curl
-        file
-        libarchive
-        pciutils
-        sbctl
-        usbutils
-        wget
+    environment.systemPackages = with pkgs; [
+      # Useful system utilities
+      curl
+      file
+      libarchive
+      pciutils
+      sbctl
+      usbutils
+      wget
 
-        # Nix
-        # inputs.nix-alien.packages.${system}.default
-        # inputs.nix-inspect.packages.default
-        nix-output-monitor
-        nix-tree
-        nixos-rebuild-ng
+      # Nix
+      inputs.nix-alien.packages.${system}.default
+      inputs.nix-inspect.packages.default
+      nix-output-monitor
+      nix-tree
+      nixos-rebuild-ng
 
-        # Utilities for shell setup
-        bfs
-        btop
-        chafa
-        chezmoi
-        delta
-        duf
-        elinks
-        eza
-        fastfetch
-        fd
-        ffmpeg
-        fzf
-        gdu
-        glow
-        hexyl
-        hyperfine
-        imagemagick
-        jq
-        lesspipe
-        mediainfo
-        ripgrep
-        tokei
-        vivid
-        yt-dlp
+      # Utilities for shell setup
+      bfs
+      btop
+      chafa
+      chezmoi
+      delta
+      duf
+      elinks
+      eza
+      fastfetch
+      fd
+      ffmpeg
+      fzf
+      gdu
+      glow
+      hexyl
+      hyperfine
+      imagemagick
+      jq
+      lesspipe
+      mediainfo
+      ripgrep
+      tokei
+      vivid
+      yt-dlp
 
-        # Spellchecker
-        hunspell
-        hunspell.en_US
-      ];
+      # Spellchecker
+      hunspell
+      hunspell.en_US
+    ];
   };
 }

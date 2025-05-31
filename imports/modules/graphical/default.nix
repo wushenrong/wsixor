@@ -5,7 +5,7 @@
       sessionVariables.NIXOS_OZONE_WL = "1";
     };
 
-    fonts ={
+    fonts = {
       enableDefaultPackages = true;
       packages = [pkgs.cascadia-code];
     };
