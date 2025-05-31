@@ -31,7 +31,7 @@
 
       # Nix
       inputs.nix-alien.packages.${system}.default
-      inputs.nix-inspect.packages.default
+      inputs.nix-inspect.packages.${system}.default
       nix-output-monitor
       nix-tree
       nixos-rebuild-ng
