@@ -57,6 +57,7 @@
       jq
       lesspipe
       mediainfo
+      mpv
       ripgrep
       tokei
       vivid
