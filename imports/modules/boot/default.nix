@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Samuel Wu
+#
+# SPDX-License-Identifier: MIT-0
+
 {lib, ...}: {
   unify.nixos.boot = {
     initrd.systemd.enable = true;

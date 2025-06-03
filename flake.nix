@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Samuel Wu
 #
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: MIT-0
 {
   inputs = {
     # Use stable instead of unstable packages
