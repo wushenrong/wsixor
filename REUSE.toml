@@ -7,4 +7,4 @@ version = 1
 [[annotations]]
 SPDX-FileCopyrightText = "2025 Samuel Wu"
 SPDX-License-Identifier = "MIT-0"
-path = ["**/*.json", "**/*.orig", ".envrc", "README.md", "flake.lock"]
+path = ["**/*.json", "**/*.orig", "README.md", "flake.lock"]

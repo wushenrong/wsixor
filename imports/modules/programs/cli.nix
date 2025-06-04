@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Samuel Wu
 #
 # SPDX-License-Identifier: MIT-0
-
 {inputs, ...}: {
   unify.nixos = {pkgs, ...}: {
     imports = [inputs.nix-index-database.nixosModules.nix-index];
@@ -38,7 +37,6 @@
       inputs.nix-inspect.packages.${system}.default
       nix-output-monitor
       nix-tree
-      nixos-rebuild-ng
 
       # Utilities for shell setup
       bfs

@@ -22,7 +22,7 @@
     };
 
     unify = {
-      url = "git+https://codeberg.org/quasigod/unify?ref=hosts-redesign";
+      url = "git+https://codeberg.org/quasigod/unify";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
