@@ -2,5 +2,6 @@
 #
 # SPDX-License-Identifier: MIT-0
 
-*       text=auto
-*.nix   text eol=lf
+{inputs, ...}: {
+  imports = [inputs.unify.flakeModule];
+}
