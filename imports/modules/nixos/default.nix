@@ -16,7 +16,6 @@
       enable = true;
       dates = "daily";
       flake = "github:wushenrong/wsixor";
-      allowReboot = true;
     };
 
     system.stateVersion = "25.05";
