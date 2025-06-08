@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2025 Samuel Wu
+#
+# SPDX-License-Identifier: MIT-0
+{
+  unify.modules.graphical.nixos = {pkgs, ...}: {
+    programs = {
+      dconf.enable = true;
+      firefox.enable = true;
+    };
+
+    environment = {
+      systemPackages = with pkgs; [
+        kitty
+        wl-clipboard
+      ];
+      sessionVariables.NIXOS_OZONE_WL = "1";
+    };
+
+    fonts = {
+      enableDefaultPackages = true;
+      packages = [pkgs.cascadia-code];
+    };
+
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+  };
+}
