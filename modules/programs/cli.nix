@@ -36,6 +36,7 @@
       inputs.nix-inspect.packages.${system}.default
       nix-output-monitor
       nix-tree
+      nixos-rebuild-ng
 
       # Utilities for shell setup
       bfs
