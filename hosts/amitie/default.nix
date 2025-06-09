@@ -5,6 +5,12 @@
   unify.hosts.nixos.amitie = {
     modules = with config.unify.modules; [
       base
+
+      samgo
+
+      graphical
+      sway
+
       avahi
       bluetooth
       clamav
@@ -14,7 +20,6 @@
       openssh
       printing
       secure-boot
-      samgo
     ];
   };
 }
