@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT-0
 {
-  unify.nixos = {hostConfig, ...}: {
+  unify.modules.base.nixos = {hostConfig, ...}: {
     networking = {
       hostName = hostConfig.name;
       networkmanager.enable = true;

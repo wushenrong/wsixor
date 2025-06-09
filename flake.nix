@@ -2,6 +2,24 @@
 #
 # SPDX-License-Identifier: MIT-0
 {
+  description = "Samuel's NixOS configuration";
+
+  outputs = {
+    flake-parts,
+    import-tree,
+    ...
+  } @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = import inputs.systems;
+      imports = [
+        inputs.unify.flakeModule
+        (import-tree [
+          ./hosts
+          ./modules
+        ])
+      ];
+    };
+
   inputs = {
     # Use stable instead of unstable packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -66,6 +84,4 @@
     # Make mkShell modular
     make-shell.url = "github:nicknovitski/make-shell";
   };
-
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }

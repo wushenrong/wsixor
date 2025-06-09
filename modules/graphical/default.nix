@@ -9,11 +9,11 @@
     };
 
     environment = {
+      sessionVariables.NIXOS_OZONE_WL = "1";
       systemPackages = with pkgs; [
         kitty
         wl-clipboard
       ];
-      sessionVariables.NIXOS_OZONE_WL = "1";
     };
 
     fonts = {

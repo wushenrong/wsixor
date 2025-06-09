@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT-0
 {
-  unify.modules.users.nixos = {pkgs, ...}: {
+  unify.modules.samgo.nixos = {pkgs, ...}: {
     users.users.samgo = {
       isNormalUser = true;
       extraGroups = [
@@ -12,5 +12,7 @@
       shell = pkgs.zsh;
       initialPassword = "CHANGE_ME";
     };
+
+    nix.settings.trusted-users = ["samgo"];
   };
 }

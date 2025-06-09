@@ -5,18 +5,19 @@
   unify.nixos = {
     imports = [
       inputs.lix-module.nixosModules.default
+      inputs.nix-index-database.nixosModules.nix-index
       inputs.nix-ld.nixosModules.nix-ld
     ];
+    programs.nix-index-database.comma.enable = true;
 
     nixpkgs.config.allowUnfree = true;
 
     nix = {
+      channel.enable = false;
+      nixPath = ["nixpkgs=${inputs.nixpkgs}"];
       settings = {
         auto-optimise-store = true;
-        trusted-users = [
-          "root"
-          "samgo"
-        ];
+        trusted-users = ["root"];
         experimental-features = [
           "nix-command"
           "flakes"

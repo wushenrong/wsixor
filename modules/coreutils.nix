@@ -3,16 +3,9 @@
 # SPDX-License-Identifier: MIT-0
 {inputs, ...}: {
   unify.nixos = {pkgs, ...}: {
-    imports = [inputs.nix-index-database.nixosModules.nix-index];
-    programs.nix-index-database.comma.enable = true;
-
     programs = {
       bat.enable = true;
       git.enable = true;
-      gnupg = {
-        agent.enable = true;
-        dirmngr.enable = true;
-      };
       less.enable = true;
       tmux.enable = true;
       vim.enable = true;
@@ -24,19 +17,9 @@
     environment.systemPackages = with pkgs; [
       # Useful system utilities
       curl
-      file
       libarchive
-      pciutils
-      sbctl
-      usbutils
+      file
       wget
-
-      # Nix
-      inputs.nix-alien.packages.${system}.default
-      inputs.nix-inspect.packages.${system}.default
-      nix-output-monitor
-      nix-tree
-      nixos-rebuild-ng
 
       # Utilities for shell setup
       bfs
@@ -45,11 +28,9 @@
       chezmoi
       delta
       duf
-      elinks
       eza
       fastfetch
       fd
-      ffmpeg
       fzf
       gdu
       glow
@@ -59,15 +40,19 @@
       jq
       lesspipe
       mediainfo
-      mpv
       ripgrep
       tokei
       vivid
-      yt-dlp
 
       # Spellchecker
       hunspell
       hunspellDicts.en_US
+
+      # Nix
+      inputs.nix-alien.packages.${system}.default
+      inputs.nix-inspect.packages.${system}.default
+      nix-output-monitor
+      nix-tree
     ];
   };
 }

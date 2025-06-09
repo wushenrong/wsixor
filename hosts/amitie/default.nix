@@ -4,9 +4,17 @@
 {config, ...}: {
   unify.hosts.nixos.amitie = {
     modules = with config.unify.modules; [
+      base
+      avahi
+      bluetooth
+      clamav
+      disko
+      facter
+      geoclue
       openssh
+      printing
       secure-boot
-      users
+      samgo
     ];
   };
 }

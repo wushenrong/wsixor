@@ -4,7 +4,7 @@
 {inputs, ...}: {
   imports = [inputs.make-shell.flakeModules.default];
 
-  unify.nixos = {
+  unify.modules.base.nixos = {
     programs.nh = {
       enable = true;
       clean.enable = true;

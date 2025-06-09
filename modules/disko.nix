@@ -2,5 +2,5 @@
 #
 # SPDX-License-Identifier: MIT-0
 {inputs, ...}: {
-  unify.nixos.imports = [inputs.disko.nixosModules.disko];
+  unify.modules.disko.nixos.imports = [inputs.disko.nixosModules.disko];
 }

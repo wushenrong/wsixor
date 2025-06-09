@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT-0
 {lib, ...}: {
-  unify.nixos.boot = {
+  unify.modules.base.nixos.boot = {
     initrd.systemd.enable = true;
 
     loader = {
