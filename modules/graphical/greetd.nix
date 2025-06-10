@@ -19,7 +19,7 @@
       enable = true;
       settings = {
         background = {
-          path = "/home/samgo/Pictures/wallpaper.png";
+          path = "/home/samgo/Pictures/wallpaper.jpg";
         };
         commands = {
           reboot = ["systemctl" "reboot"];
