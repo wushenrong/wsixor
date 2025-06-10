@@ -2,24 +2,13 @@
 #
 # SPDX-License-Identifier: MIT-0
 {
-  unify.modules.sway.nixos = {pkgs, ...}: {
+  unify.modules.sway.nixos = {
     programs = {
       sway = {
         enable = true;
         wrapperFeatures.gtk = true;
       };
       waybar.enable = true;
-    };
-
-    services.greetd = {
-      enable = true;
-      settings = rec {
-        initial_session = {
-          command = "${pkgs.sway}/bin/sway";
-          user = "samgo";
-        };
-        default_session = initial_session;
-      };
     };
   };
 }
