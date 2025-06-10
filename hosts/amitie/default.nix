@@ -9,7 +9,6 @@
       samgo
 
       graphical
-      greetd
       sway
 
       avahi
