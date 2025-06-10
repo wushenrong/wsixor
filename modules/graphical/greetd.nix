@@ -2,7 +2,19 @@
 #
 # SPDX-License-Identifier: MIT-0
 {
-  unify.modules.greetd.nixos = {pkgs, ...}: {
+  unify.modules.greetd.nixos = {pkgs, ...}: let
+    swayConfig = pkgs.writeText "greetd-sway-config" ''
+      exec "${pkgs.greetd.regreet}/bin/regreet; ${pkgs.sway}/bin/swaymsg exit"
+
+      bindsym Mod4+shift+e exec swaynag \
+        -t warning \
+        -m 'What do you want to do?' \
+        -b 'Poweroff' 'systemctl poweroff' \
+        -b 'Reboot' 'systemctl reboot'
+
+      include /etc/sway/config.d/*
+    '';
+  in {
     programs.regreet = {
       enable = true;
       settings.commands = {
@@ -23,6 +35,16 @@
       };
     };
 
-    services.greetd.enable = true;
+    environment.systemPackages = [pkgs.sway];
+
+    services.greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+          user = "greeter";
+        };
+      };
+    };
   };
 }
