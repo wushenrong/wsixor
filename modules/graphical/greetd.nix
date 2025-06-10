@@ -1,8 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Samuel Wu
 #
 # SPDX-License-Identifier: MIT-0
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   swayConfig = pkgs.writeText "greetd-sway-config" ''
     exec "regreet; swaymsg exit"
 
@@ -14,8 +13,7 @@ let
 
     include /etc/sway/config.d/*
   '';
-in
-{
+in {
   unify.modules.greetd.nixos = {
     programs.regreet = {
       enable = true;
