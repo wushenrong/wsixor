@@ -4,7 +4,7 @@
 {
   unify.modules.greetd.nixos = {pkgs, ...}: let
     swayConfig = pkgs.writeText "greetd-sway-config" ''
-      exec "${pkgs.greetd.regreet}/bin/regreet; ${pkgs.sway}/bin/swaymsg exit"
+      exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; ${pkgs.sway}/bin/swaymsg exit"
 
       bindsym Mod4+shift+e exec swaynag \
         -t warning \
@@ -15,30 +15,30 @@
       include /etc/sway/config.d/*
     '';
   in {
-    programs.regreet = {
-      enable = true;
-      settings = {
-        background = {
-          path = "/home/samgo/Pictures/wallpaper.jpg";
-        };
-        commands = {
-          reboot = ["systemctl" "reboot"];
-          poweroff = ["systemctl" "poweroff"];
-        };
-      };
-      theme = {
-        name = "Matcha-aliz";
-        package = pkgs.matcha-gtk-theme;
-      };
-      iconTheme = {
-        name = "Papirus";
-        package = pkgs.papirus-icon-theme;
-      };
-      cursorTheme = {
-        name = "Papirus";
-        package = pkgs.papirus-icon-theme;
-      };
-    };
+    # programs.regreet = {
+    #   enable = true;
+    #   settings = {
+    #     background = {
+    #       path = "/home/samgo/Pictures/wallpaper.jpg";
+    #     };
+    #     commands = {
+    #       reboot = ["systemctl" "reboot"];
+    #       poweroff = ["systemctl" "poweroff"];
+    #     };
+    #   };
+    #   theme = {
+    #     name = "Matcha-aliz";
+    #     package = pkgs.matcha-gtk-theme;
+    #   };
+    #   iconTheme = {
+    #     name = "Papirus";
+    #     package = pkgs.papirus-icon-theme;
+    #   };
+    #   cursorTheme = {
+    #     name = "Papirus";
+    #     package = pkgs.papirus-icon-theme;
+    #   };
+    # };
 
     environment.systemPackages = [pkgs.sway];
 
