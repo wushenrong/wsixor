@@ -7,11 +7,9 @@
       name = "dbus-sway-environment";
       destination = "/bin/dbus-sway-environment";
       executable = true;
-
       text = ''
-        dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-        systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-        systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+        systemctl --user stop pipewire xdg-desktop-portal xdg-desktop-portal-wlr
+        systemctl --user start pipewire xdg-desktop-portal xdg-desktop-portal-wlr
       '';
     };
 
@@ -36,6 +34,10 @@
         -m 'What do you want to do?' \
         -b 'Poweroff' 'systemctl poweroff' \
         -b 'Reboot' 'systemctl reboot'
+
+      exec_always dbus-sway-environment
+      exec_always configure-gtk
+
       include /etc/sway/config.d/*
     '';
   in {

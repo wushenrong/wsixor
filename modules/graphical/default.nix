@@ -12,6 +12,7 @@
       sessionVariables.NIXOS_OZONE_WL = "1";
       systemPackages = with pkgs; [
         glib
+        gsettings-desktop-schemas
         kitty
         matcha-gtk-theme
         papirus-icon-theme
