@@ -14,6 +14,7 @@
 
     nix = {
       channel.enable = false;
+      gc.automatic = true;
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
       settings = {
         auto-optimise-store = true;

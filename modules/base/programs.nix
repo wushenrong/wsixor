@@ -4,6 +4,7 @@
 {
   unify.modules.base.nixos = {pkgs, ...}: {
     programs = {
+      nh.enable = true;
       gnupg = {
         agent.enable = true;
         dirmngr.enable = true;

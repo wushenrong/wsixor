@@ -80,8 +80,5 @@
 
     # Examine nix stores
     nix-inspect.url = "github:bluskript/nix-inspect";
-
-    # Make mkShell modular
-    make-shell.url = "github:nicknovitski/make-shell";
   };
 }
