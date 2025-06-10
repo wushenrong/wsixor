@@ -1,20 +1,20 @@
 # SPDX-FileCopyrightText: 2025 Samuel Wu
 #
 # SPDX-License-Identifier: MIT-0
-{pkgs, ...}: let
-  swayConfig = pkgs.writeText "greetd-sway-config" ''
-    exec "regreet; swaymsg exit"
+{
+  unify.modules.greetd.nixos = {pkgs, ...}: let
+    swayConfig = pkgs.writeText "greetd-sway-config" ''
+      exec "${pkgs.greetd.regreet}/bin/regreet; swaymsg exit"
 
-    bindsym Mod4+shift+e exec swaynag \
-      -t warning \
-      -m 'What do you want to do?' \
-      -b 'Poweroff' 'systemctl poweroff' \
-      -b 'Reboot' 'systemctl reboot'
+      bindsym Mod4+shift+e exec swaynag \
+        -t warning \
+        -m 'What do you want to do?' \
+        -b 'Poweroff' 'systemctl poweroff' \
+        -b 'Reboot' 'systemctl reboot'
 
-    include /etc/sway/config.d/*
-  '';
-in {
-  unify.modules.greetd.nixos = {
+      include /etc/sway/config.d/*
+    '';
+  in {
     programs.regreet = {
       enable = true;
       settings.commands = {
@@ -34,6 +34,8 @@ in {
         package = pkgs.papirus-icon-theme;
       };
     };
+
+    environment.systemPackages = [pkgs.sway];
 
     services.greetd = {
       enable = true;
