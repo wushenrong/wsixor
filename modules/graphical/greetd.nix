@@ -17,9 +17,14 @@
   in {
     programs.regreet = {
       enable = true;
-      settings.commands = {
-        reboot = ["systemctl" "reboot"];
-        poweroff = ["systemctl" "poweroff"];
+      settings = {
+        background = {
+          path = "/home/samgo/Pictures/wallpaper.png";
+        };
+        commands = {
+          reboot = ["systemctl" "reboot"];
+          poweroff = ["systemctl" "poweroff"];
+        };
       };
       theme = {
         name = "Matcha-aliz";

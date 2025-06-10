@@ -15,6 +15,7 @@
         matcha-gtk-theme
         papirus-icon-theme
         wl-clipboard
+        xdg-user-dirs
       ];
     };
 
