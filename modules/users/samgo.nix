@@ -6,8 +6,9 @@
     users.users.samgo = {
       isNormalUser = true;
       extraGroups = [
-        "wheel"
+        "input"
         "networkmanager"
+        "wheel"
       ];
       shell = pkgs.zsh;
       initialPassword = "CHANGE_ME";

@@ -15,6 +15,7 @@
     environment.systemPackages = with pkgs; [
       eww
       nautilus
+      polkit_gnome
       wofi
     ];
 
