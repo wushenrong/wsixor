@@ -14,7 +14,14 @@
 
     nix = {
       channel.enable = false;
-      gc.automatic = true;
+      optimise = {
+        automatic = true;
+        dates = "weekly";
+      };
+      gc = {
+        automatic = true;
+        dates = "weekly";
+      };
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
       settings = {
         auto-optimise-store = true;
