@@ -22,6 +22,7 @@
         # Utilities
         libva-utils
         mesa-demos
+        vulkan-tools
       ];
     };
 
