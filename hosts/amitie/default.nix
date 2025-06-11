@@ -9,6 +9,7 @@
       samgo
 
       graphical
+      greetd
       sway
 
       avahi
@@ -16,10 +17,11 @@
       clamav
       disko
       facter
-      geoclue
+      geoclue2
       openssh
       printing
       secure-boot
+      udisks2
     ];
   };
 }

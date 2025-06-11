@@ -2,16 +2,16 @@
 #
 # SPDX-License-Identifier: MIT-0
 {
-  unify.modules.base.nixos = {
-    system.rebuild.enableNg = true;
-    system.autoUpgrade = {
+  unify.modules.base.nixos.system = {
+    rebuild.enableNg = true;
+    autoUpgrade = {
       enable = true;
       dates = "daily";
       flake = "github:wushenrong/wsixor";
     };
 
     # See https://github.com/NixOS/nixpkgs/pull/308801
-    system.switch = {
+    switch = {
       enable = false;
       enableNg = true;
     };
@@ -22,6 +22,6 @@
     # this value at the release version of the first install of this system.
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://search.nixos.org/options?&show=system.stateVersion&from=0&size=50&sort=relevance&type=packages&query=stateVersion).
-    system.stateVersion = "25.05";
+    stateVersion = "25.05";
   };
 }
