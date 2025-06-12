@@ -14,10 +14,7 @@
 
     nix = {
       channel.enable = false;
-      optimise = {
-        automatic = true;
-        dates = ["weekly"];
-      };
+      optimise.automatic = true;
       gc = {
         automatic = true;
         dates = "weekly";

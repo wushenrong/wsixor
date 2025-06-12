@@ -5,8 +5,6 @@
   unify.hosts.nixos.amitie.nixos = {
     facter.reportPath = ./facter.json;
 
-    boot.kernelModules = ["coretemp" "kvm-intel"];
-
     imports = with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
       common-gpu-intel
