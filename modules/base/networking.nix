@@ -3,6 +3,11 @@
 # SPDX-License-Identifier: MIT-0
 {
   unify.modules.base.nixos = {hostConfig, ...}: {
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+
     networking = {
       hostName = hostConfig.name;
       networkmanager.enable = true;

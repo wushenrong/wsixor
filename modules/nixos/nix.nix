@@ -16,7 +16,7 @@
       channel.enable = false;
       optimise = {
         automatic = true;
-        dates = "weekly";
+        dates = ["weekly"];
       };
       gc = {
         automatic = true;

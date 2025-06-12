@@ -13,15 +13,11 @@
       sway
 
       avahi
-      bluetooth
-      clamav
       disko
       facter
-      geoclue2
       openssh
       printing
       secure-boot
-      udisks2
     ];
   };
 }

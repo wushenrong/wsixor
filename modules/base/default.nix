@@ -4,11 +4,12 @@
 {
   unify.modules.base.nixos = {pkgs, ...}: {
     programs = {
-      nh.enable = true;
       gnupg = {
         agent.enable = true;
         dirmngr.enable = true;
       };
+      light.enable = true;
+      nh.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
@@ -28,5 +29,20 @@
       mpv
       yt-dlp
     ];
+
+    services = {
+      clamav = {
+        daemon.enable = true;
+        updater.enable = true;
+        fangfrisch.enable = true;
+      };
+      fwupd.enable = true;
+      geoclue2 = {
+        enable = true;
+        enableDemoAgent = false;
+      };
+      tlp.enable = true;
+      udisks2.enable = true;
+    };
   };
 }
