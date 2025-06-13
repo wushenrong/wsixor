@@ -8,7 +8,6 @@
         agent.enable = true;
         dirmngr.enable = true;
       };
-      light.enable = true;
       nh.enable = true;
     };
 
