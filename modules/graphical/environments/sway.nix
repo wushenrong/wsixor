@@ -7,6 +7,7 @@
       gnome-disks.enable = true;
       sway = {
         enable = true;
+        package = pkgs.swayfx;
         wrapperFeatures.gtk = true;
         extraPackages = with pkgs; [
           brightnessctl
@@ -15,6 +16,7 @@
           nautilus
           slurp
           swappy
+          swaybg
           swayidle
           swaylock
           wofi

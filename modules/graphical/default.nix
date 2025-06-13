@@ -16,6 +16,7 @@
         kitty
         matcha-gtk-theme
         papirus-icon-theme
+        pwvucontrol
         vscode.fhs
         wl-clipboard
         xdg-user-dirs

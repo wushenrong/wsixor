@@ -53,7 +53,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+          command = "${pkgs.swayfx}/bin/sway --config ${swayConfig}";
           user = "greeter";
         };
       };
