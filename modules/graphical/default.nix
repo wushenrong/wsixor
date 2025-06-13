@@ -29,7 +29,11 @@
 
     fonts = {
       enableDefaultPackages = true;
-      packages = [pkgs.cascadia-code];
+      packages = with pkgs; [
+        cascadia-code
+        font-awesome
+        nerd-fonts.symbols-only
+      ];
     };
 
     services.pipewire = {

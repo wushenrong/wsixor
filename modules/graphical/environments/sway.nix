@@ -8,16 +8,21 @@
       sway = {
         enable = true;
         wrapperFeatures.gtk = true;
+        extraPackages = with pkgs; [
+          brightnessctl
+          eww
+          grim
+          nautilus
+          polkit_gnome
+          slurp
+          swappy
+          swayidle
+          swaylock
+          wofi
+        ];
       };
       waybar.enable = true;
     };
-
-    environment.systemPackages = with pkgs; [
-      eww
-      nautilus
-      polkit_gnome
-      wofi
-    ];
 
     services.gnome.gnome-keyring.enable = true;
   };

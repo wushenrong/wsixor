@@ -9,8 +9,8 @@
       bindsym Mod4+shift+e exec swaynag \
         -t warning \
         -m 'What do you want to do?' \
-        -b 'Poweroff' 'systemctl poweroff' \
-        -b 'Reboot' 'systemctl reboot'
+        -b 'Reboot' 'systemctl reboot'  \
+        -b 'Shutdown' 'systemctl poweroff'
 
       set $gnome-schema org.gnome.desktop.interface
 
