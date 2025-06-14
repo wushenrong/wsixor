@@ -9,7 +9,6 @@
       gamemode.enable = true;
       steam = {
         enable = true;
-        extraPackages = [pkgs.steam-run];
         extraCompatPackages = [pkgs.proton-ge-bin];
       };
     };
