@@ -13,6 +13,7 @@
           brightnessctl
           eww
           grim
+          mako
           nautilus
           slurp
           swappy

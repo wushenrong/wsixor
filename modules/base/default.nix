@@ -14,6 +14,7 @@
     environment.systemPackages = with pkgs; [
       # Hardware
       pciutils
+      psmisc
       sbctl
       usbutils
 

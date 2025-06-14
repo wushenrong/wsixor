@@ -6,12 +6,19 @@
     programs = {
       dconf.enable = true;
       firefox.enable = true;
+      gamemode.enable = true;
+      steam = {
+        enable = true;
+        extraPackages = [pkgs.steam-run];
+        extraCompatPackages = [pkgs.proton-ge-bin];
+      };
     };
 
     environment = {
       sessionVariables.NIXOS_OZONE_WL = "1";
       systemPackages = with pkgs; [
         adwaita-icon-theme
+        discord
         glib
         kitty
         matcha-gtk-theme
