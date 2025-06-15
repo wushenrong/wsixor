@@ -11,10 +11,11 @@
         wrapperFeatures.gtk = true;
         extraPackages = with pkgs; [
           brightnessctl
-          eww
+          cliphist
           grim
           mako
           nautilus
+          networkmanagerapplet
           slurp
           swappy
           swaybg
