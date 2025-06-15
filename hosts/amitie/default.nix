@@ -13,6 +13,7 @@
       sway
 
       avahi
+      bluetooth
       disko
       facter
       openssh

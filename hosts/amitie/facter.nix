@@ -3,11 +3,7 @@
 # SPDX-License-Identifier: MIT-0
 {inputs, ...}: {
   unify.hosts.nixos.amitie.nixos = {
+    imports = [inputs.nixos-hardware.nixosModules.common-cpu-intel];
     facter.reportPath = ./facter.json;
-
-    imports = with inputs.nixos-hardware.nixosModules; [
-      common-cpu-intel
-      common-gpu-intel
-    ];
   };
 }
