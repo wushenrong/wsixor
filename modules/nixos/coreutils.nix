@@ -7,8 +7,20 @@
       bat.enable = true;
       git.enable = true;
       less.enable = true;
+      nano.nanorc = ''
+        set titlecolor bold,white,magenta
+        set promptcolor black,yellow
+        set statuscolor bold,white,magenta
+        set errorcolor bold,white,red
+        set spotlightcolor black,orange
+        set selectedcolor lightwhite,cyan
+        set stripecolor ,yellow
+        set scrollercolor magenta
+        set numbercolor magenta
+        set keycolor lightmagenta
+        set functioncolor magenta
+      '';
       tmux.enable = true;
-      vim.enable = true;
       yazi.enable = true;
       zoxide.enable = true;
       zsh.enable = true;

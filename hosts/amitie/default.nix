@@ -6,6 +6,9 @@
     modules = with config.unify.modules; [
       base
 
+      plymouth
+      secure-boot
+
       samgo
 
       graphical
@@ -18,7 +21,6 @@
       facter
       openssh
       printing
-      secure-boot
     ];
   };
 }
