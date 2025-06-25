@@ -16,6 +16,7 @@
       pciutils
       psmisc
       sbctl
+      smartmontools
       usbutils
 
       # NixOS
