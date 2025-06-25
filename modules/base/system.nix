@@ -4,11 +4,6 @@
 {
   unify.modules.base.nixos.system = {
     rebuild.enableNg = true;
-    autoUpgrade = {
-      enable = true;
-      dates = "daily";
-      flake = "github:wushenrong/wsixor";
-    };
 
     # See https://github.com/NixOS/nixpkgs/pull/308801
     switch = {
