@@ -18,12 +18,16 @@
     programs.regreet = {
       enable = true;
       settings = {
+        appearance.greeting_msg = "Welcome back!"
         background = {
-          path = "/home/samgo/Pictures/wallpaper.jpg";
+          path = "/home/greeter/Pictures/wallpaper.jpg";
         };
         commands = {
           reboot = ["systemctl" "reboot"];
           poweroff = ["systemctl" "poweroff"];
+        };
+        widget.clock = {
+          format = "%F %T %Z";
         };
       };
       theme = {
@@ -38,6 +42,9 @@
         name = "Papirus-Dark";
         package = pkgs.papirus-icon-theme;
       };
+      font = {
+        size = 14;
+      };
     };
 
     services.greetd = {
@@ -48,6 +55,11 @@
           user = "greeter";
         };
       };
+    };
+
+    users.users.greeter = {
+      home = "/home/greeter";
+      createHome = true;
     };
   };
 }
