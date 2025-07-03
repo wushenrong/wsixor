@@ -14,12 +14,14 @@
     };
 
     environment = {
-      sessionVariables = {
-        NIXOS_OZONE_WL = "1";
+      variables = {
         # Use OpenGL instead of Vulkan for GTK4 due to possabily a Mesa
         # regression
         # https://discourse.nixos.org/t/regreet-shows-up-with-a-white-screen-after-booting/65490
         GSK_RENDERER = "ngl";
+      };
+      sessionVariables = {
+        NIXOS_OZONE_WL = "1";
       };
       systemPackages = with pkgs; [
         adwaita-icon-theme
