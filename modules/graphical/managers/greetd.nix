@@ -4,7 +4,7 @@
 {
   unify.modules.greetd.nixos = {pkgs, ...}: let
     swayConfig = pkgs.writeText "greetd-sway-config" ''
-      exec "${pkgs.greetd.regreet}/bin/regreet -l; swaymsg exit"
+      exec "${pkgs.greetd.regreet}/bin/regreet; swaymsg exit"
 
       bindsym Mod4+shift+e exec swaynag \
         -t warning \
