@@ -18,7 +18,7 @@
     programs.regreet = {
       enable = true;
       settings = {
-        appearance.greeting_msg = "Welcome back!"
+        appearance.greeting_msg = "Welcome back!";
         background = {
           path = "/home/greeter/Pictures/wallpaper.jpg";
         };
