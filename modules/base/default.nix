@@ -13,6 +13,7 @@
 
     environment.systemPackages = with pkgs; [
       # Hardware
+      efibootmgr
       pciutils
       psmisc
       sbctl
