@@ -21,7 +21,6 @@
         set functioncolor magenta
       '';
       tmux.enable = true;
-      yazi.enable = true;
       zoxide.enable = true;
       zsh.enable = true;
     };
