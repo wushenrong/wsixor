@@ -10,6 +10,8 @@ on:
 jobs:
   nix-flake-update:
     runs-on: ubuntu-latest
+    environment:
+      name: nix-flake-update
     permissions:
       contents: write
       id-token: write
