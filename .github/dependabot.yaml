@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2025 Samuel Wu
+#
+# SPDX-License-Identifier: MIT-0
+
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    schedule:
+      interval: weekly
+    directory: /
