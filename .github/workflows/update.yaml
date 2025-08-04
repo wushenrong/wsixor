@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: MIT-0
 
+name: Update flakes
+
 on:
   workflow_dispatch:
   schedule:
