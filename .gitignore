@@ -3,4 +3,4 @@
 # SPDX-License-Identifier: MIT-0
 
 .vscode/*
-!.vscode/settings.json.orig
+!.vscode/settings.json
