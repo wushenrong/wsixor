@@ -6,8 +6,8 @@ name: Update flakes
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 13 * * 1"
+  # schedule:
+  #   - cron: 0 13 * * 1
 
 jobs:
   nix-flake-update:
