@@ -1,0 +1,18 @@
+{
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"jnoortheen.nix-ide"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/nix:1": {
+			"multiUser": true,
+			"packages": "alejandra,nixd,npins",
+			"version": "latest"
+		}
+	},
+	"image": "mcr.microsoft.com/devcontainers/base:alpine-3.22",
+	"name": "NixOS Configuration Development"
+}
